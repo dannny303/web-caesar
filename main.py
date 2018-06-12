@@ -11,20 +11,19 @@ form = """
     <head>
         <style>
             form {{
-                postion: center;
                 background-color: #eee;
                 padding: 20px;
-                margin: 0 auto; 
+                margin: 0 auto;
                 width: 540px;
                 font: 16px sans-serif;
                 border-radius: 10px;
             }}
             textarea {{
-                postion: center;
                 margin: 10px 0;
                 width: 540px;
                 height: 120px;
             }}
+            
         </style>
     </head>
     <body>
@@ -45,7 +44,7 @@ form = """
 
 @app.route("/")
 def index ():
-    return form.format('encrypt message here:')
+    return form.format('Encrypt message here:')
 
 @app.route("/encrypt", methods=['GET', 'POST'])
 def encrypt ():
@@ -55,7 +54,7 @@ def encrypt ():
     #print(rot)
     caesar = rotate_string(text, rot)
 
-    print(caesar)
+    #print(caesar)
 
     return form.format(caesar)
 
